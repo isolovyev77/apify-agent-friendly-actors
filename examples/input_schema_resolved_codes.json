@@ -1,0 +1,26 @@
+{
+    "title": "Software registry lookup input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "softwareClasses": {
+            "title": "Software classes",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Class codes as printed on the registry site: 06.09 for one class, 06 for the whole group. The Actor resolves them to the registry's internal filter ids, so you never need to open the site to fill this in.",
+            "prefill": ["06.09"]
+        },
+        "platforms": {
+            "title": "Stores to search",
+            "type": "array",
+            "editor": "select",
+            "description": "Pick from the list. Free-form values used to be accepted here, and agents passed Ozon, ozon.ru and OZON for the same store.",
+            "items": {
+                "type": "string",
+                "enum": ["ozon", "wildberries", "yandex", "regard", "citilink"],
+                "enumTitles": ["Ozon", "Wildberries", "Yandex Market", "Regard", "Citilink"]
+            },
+            "default": ["regard", "citilink"]
+        }
+    }
+}
